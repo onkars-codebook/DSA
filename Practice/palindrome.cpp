@@ -1,19 +1,37 @@
-// Question : Write C++ program with functions a) To print original string followed by reversed string using  stack
-#include<iostream>
+#include <iostream>
+#include <string>
 using namespace std;
-class stack 
-{
+
+class Stack {
     int top;
+    static const int size = 100;  // Increase size if needed
+    char STACK[size];
+
+public:
+    Stack() : top(-1) {}  // Constructor initializes `top` to -1
+
+    // Function to push an element to the stack
+  
+};
+
+int main() {
+    Stack s;
     string str;
-    static const int size = 10;
-    char str[size];
-    stack()
-    {
-        top = -1;
+    
+    cout << "Enter a string: ";
+    cin >> str;
+
+    cout << "Original string: " << str << endl;
+
+    // Print reversed string
+    s.printReversedString(str);
+
+    // Check if the string is a palindrome
+    if (s.isPalindrome(str)) {
+        cout << "The string is a palindrome." << endl;
+    } else {
+        cout << "The string is not a palindrome." << endl;
     }
 
-};
-int main()
-{
-
+    return 0;
 }
