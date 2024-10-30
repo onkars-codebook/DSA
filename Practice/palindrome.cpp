@@ -33,7 +33,6 @@ public:
     bool isEmpty() {
         return top == -1;
     }
-
     // Function to reverse the string using stack
     void printReversedString(const string& str) {
         // Push all characters of the string to the stack
