@@ -1,4 +1,8 @@
-#include <iostream>
+// * Description:
+//  * This program simulates job scheduling in an Operating System using the 
+//  * First-Come, First-Served (FCFS) scheduling algorithm. The FCFS algorithm processes 
+//  * jobs in the order they arrive, making it simple and easy to implement.
+#include <iostream>  
 #include <string>
 using namespace std;
 
@@ -66,7 +70,6 @@ public:
         cout << endl;
     }
 };
-
 int main() {
     JobQueue jobQueue;
     int choice;
