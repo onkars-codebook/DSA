@@ -22,18 +22,15 @@ void displayMatrix(vector<vector<int>> &mat)
 
 int main()
 {
-
     // Create a graph with 4 vertices and no edges
     // Note that all values are initialized as 0
     int V = 4;
     vector<vector<int>> mat(V, vector<int>(V, 0));
-
     // Now add edges one by one
     addEdge(mat, 0, 1);
     addEdge(mat, 0, 2);
     addEdge(mat, 1, 2);
     addEdge(mat, 2, 3);
-
     /* Alternatively we can also create using below
        code if we know all edges in advacem
 
