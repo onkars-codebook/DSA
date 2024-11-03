@@ -4,7 +4,6 @@
 #include <vector>
 using namespace std;
 
-// Class representing a graph
 class Graph {
 private:
     // Adjacency list to represent the graph
