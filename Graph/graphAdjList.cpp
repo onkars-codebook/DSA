@@ -88,6 +88,5 @@ int main()
     // Print the adjacency list of the directed graph
     cout << "Directed Graph Adjacency List:" << endl;
     directedGraph.printGraph();
-
     return 0;
 }
