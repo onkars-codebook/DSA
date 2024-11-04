@@ -95,6 +95,7 @@ int main()
 	g.addEdge(2, 0, 6); 
 	g.addEdge(0, 3, 5); 
 
+	// Function call 
 	g.kruskals_mst(); 
 
 	return 0; 
