@@ -23,7 +23,6 @@ int minDistance(int dist[], bool sptSet[])
 
     return min_index;
 }
-
 // A utility function to print the constructed distance
 // array
 void printSolution(int dist[])
@@ -32,7 +31,6 @@ void printSolution(int dist[])
     for (int i = 0; i < V; i++)
         cout << i << " \t\t\t\t" << dist[i] << endl;
 }
-
 // Function that implements Dijkstra's single source
 // shortest path algorithm for a graph represented using
 // adjacency matrix representation
@@ -82,8 +80,6 @@ void dijkstra(int graph[V][V], int src)
     // print the constructed distance array
     printSolution(dist);
 }
-
-// driver's code
 int main()
 {
 
@@ -103,5 +99,3 @@ int main()
 
     return 0;
 }
-
-// This code is contributed by shivanisinghss2110
