@@ -3,7 +3,6 @@ using namespace std;
 
 void moveZerosToEnd(int arr[], int n) {
     int j = 0; // j is the index for the next non-zero element
-
     // Traverse the array
     for (int i = 0; i < n; i++) {
         if (arr[i] != 0) {
