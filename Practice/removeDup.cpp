@@ -7,7 +7,6 @@ int removeDuplicates(int arr[], int n) {
     }
 
     int j = 0; // j is the index of the last unique element
-
     // Traverse the array
     for (int i = 1; i < n; i++) {
         if (arr[i] != arr[j]) {
