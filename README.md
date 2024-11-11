@@ -7,3 +7,5 @@ Memory Management: Proper use of data structures allows for better memory utiliz
 Scalability: Algorithms help manage data as it scales, which is crucial in applications with growing datasets.
 
 Foundation for Software Development: Mastering DSA enhances programming skills, improves logic building, and enables the creation of effective, robust software.
+
+11 nov Exam day ! -> DSA so cant commit Today !
