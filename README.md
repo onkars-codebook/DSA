@@ -9,3 +9,4 @@ Scalability: Algorithms help manage data as it scales, which is crucial in appli
 Foundation for Software Development: Mastering DSA enhances programming skills, improves logic building, and enables the creation of effective, robust software.
 
 11 nov Exam day ! -> DSA so cant commit Today !
+12 nov Exam day 2 -> Data base management system !
