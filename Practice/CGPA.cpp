@@ -22,8 +22,8 @@ int calculateCGPA(int marks) {
 int main() {
     // Define subjects and their respective credits
     int creditsADS = 4, creditsDBMS = 4, creditsDM = 3, creditsQSIP = 2;
+  
     int creditsDT = 2, creditsUIUX = 2, creditsUHV = 2, creditsCNP = 2;
-
     // Store marks for each subject
     int marksADS, marksDBMS, marksDM, marksQSIP;
     int marksDT, marksUIUX, marksUHV, marksCNP;
@@ -59,6 +59,7 @@ int main() {
     // Total credits and total weighted CGPA
     int totalCredits = creditsADS + creditsDBMS + creditsDM + creditsQSIP +
                        creditsDT + creditsUIUX + creditsUHV + creditsCNP;
+    cout<<"Credit Count :"<<totalCredits;
     int totalCGPA = cgpaADS + cgpaDBMS + cgpaDM + cgpaQSIP +
                     cgpaDT + cgpaUIUX + cgpaUHV + cgpaCNP;
 
