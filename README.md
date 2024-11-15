@@ -12,3 +12,4 @@ Foundation for Software Development: Mastering DSA enhances programming skills, 
 12 nov Exam day 2 -> Data base management system !
 13 Nov Exam day 3 -> Decrete mathematics
 14 Nov Exam day 4 -> QSIP 
+15 Nov Exam day 4 -> UIUX 
