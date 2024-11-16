@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <string>
-
+// This problem helps libraries manage returns efficiently and ensures that books are processed in the order they are returned. 
 using namespace std;
 
 // Function to add a book to the queue
