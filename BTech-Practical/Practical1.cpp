@@ -48,5 +48,34 @@ public:
 };
 
 int main() {
-    
+    // Driver code
+    int ch;
+    char ch1;
+    Stack c1;
+
+    do {
+        cout << "Select Operations:" << endl;
+        cout << "1. Push \t 2. Pop \t 3. Display" << endl;
+        cin >> ch;
+
+        switch (ch) {
+            case 1:
+                c1.push();
+                break;
+            case 2:
+                c1.pop();
+                break;
+            case 3:
+                c1.display();
+                break;
+            default:
+                cout << "Invalid choice! Please try again." << endl;
+                break;
+        }
+
+        cout << "Do you want to continue? (y/n): ";
+        cin >> ch1;
+    } while (ch1 == 'Y' || ch1 == 'y');
+
+    return 0;
 }
