@@ -6,6 +6,9 @@
         "deque": "cpp",
         "vector": "cpp",
         "iostream": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "sstream": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp"
     }
 }
