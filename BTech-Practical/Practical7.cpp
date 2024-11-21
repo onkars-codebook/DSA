@@ -61,7 +61,24 @@ public:
     cout<<root->data;
  }
 
-
+    // Helper function to check if a node is a leaf
+    bool isLeaf(Node* node) {
+    return (node != nullptr && node->left == nullptr && node->right == nullptr);
+    }
+    
+    // Function to display the leaf nodes
+    void displayLeafNodes(Node* root) {
+        if (root == nullptr) return;
+    
+        // If the current node is a leaf, print it
+        if (isLeaf(root)) {
+            cout << root->data << " ";
+        }
+    
+        // Traverse left and right subtrees
+        displayLeafNodes(root->left);
+        displayLeafNodes(root->right);
+    }
 
 
 int main()
