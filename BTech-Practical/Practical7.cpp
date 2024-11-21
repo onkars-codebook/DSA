@@ -1,94 +1,86 @@
-#include <iostream>
+// This program that simply defines the Implementation of the Trees and their traversal as well  SO why to stop lets start .
+#include<iostream>
 using namespace std;
-
-// Node class represents a single node in the binary tree
-class Node {
+class Node{
 public:
-    int data;      // Value stored in the node
-    Node* left;    // Pointer to the left child
-    Node* right;   // Pointer to the right child
-
-    // Constructor to initialize the node with data
-    Node(int val) {
+    int data;
+    Node* left;
+    Node* right;
+    Node(int val)             //Initiallizes the values  to the tree.
+    {
         data = val;
         left = nullptr;
         right = nullptr;
     }
-};
-
-// Function to create the binary tree
-Node* createTree() {
+ };
+ Node* CreateTree()
+ {
     int data;
-    cout << "Enter data (-1 for no node): ";
-    cin >> data;
+    cout<<"Enter a data :(-1 indicates the null value )";
+    cin>>data;
 
-    // Base case: If the input is -1, return nullptr (no node)
-    if (data == -1) return nullptr;
+    if(data ==  -1)
+    {
+        return nullptr;
+    }
 
-    // Create a new node with the input data
     Node* root = new Node(data);
+    
+    cout <<"Enter the left child of "<<data<<":"<<endl;
+    root->left = CreateTree();
 
-    // Recursively create the left subtree
-    cout << "Enter left for " << data << ": " << endl;
-    root->left = createTree();
-
-    // Recursively create the right subtree
-    cout << "Enter right for " << data << ": " << endl;
-    root->right = createTree();
-
-    // Return the created node
+    cout <<"Enter the right child of "<<data<<":"<<endl;
+    root->right = CreateTree();
+    
     return root;
-}
+ }
 
-// Function for in-order traversal (Left -> Root -> Right)
-void inOrder(Node* root) {
-    if (root == nullptr) return; // Base case: If the node is null, return
+ void inorder(Node* root)
+ {
+    if(root == nullptr) 
+    return; 
+    inorder(root->left);
+    cout<<root->data;
+    inorder(root->right);
+ }
+ 
+ void preorder(Node* root)
+ {
+    if(root == nullptr) return;
+    cout<<root->data;
+    preorder(root->left);
+    preorder(root->right);
+ }
 
-    inOrder(root->left);        // Traverse the left subtree
-    cout << root->data << " ";  // Visit the root node
-    inOrder(root->right);       // Traverse the right subtree
-}
+ void postorder(Node* root)
+ {
+    if(root == nullptr) 
+    return;
+    postorder(root->left);
+    postorder(root->right);
+    cout<<root->data;
+ }
 
-// Function for pre-order traversal (Root -> Left -> Right)
-void preOrder(Node* root) {
-    if (root == nullptr) return; // Base case: If the node is null, return
 
-    cout << root->data << " ";  // Visit the root node
-    preOrder(root->left);       // Traverse the left subtree
-    preOrder(root->right);      // Traverse the right subtree
-}
 
-// Function for post-order traversal (Left -> Right -> Root)
-void postOrder(Node* root) {
-    if (root == nullptr) return; // Base case: If the node is null, return
 
-    postOrder(root->left);      // Traverse the left subtree
-    postOrder(root->right);     // Traverse the right subtree
-    cout << root->data << " ";  // Visit the root node
-}
+int main()
+{
+Node* root = nullptr;
+// create a root ;
+root = CreateTree();
 
-int main() {
-    Node* root = nullptr; // Pointer to the root of the binary tree
+// preorder Traversal of the Tree
 
-    cout << "Create a tree:" << endl;
+cout<<"Inorder Traversal :";
+inorder(root);
 
-    // Create the binary tree using user input
-    root = createTree();
+cout<<"Preorder Traversal :";
+preorder(root);
 
-    // Perform and display the in-order traversal
-    cout << "\nIn-order Traversal: ";
-    inOrder(root);
-    cout << endl;
+cout<<"postorder Traversal :";
+postorder(root);
 
-    // Perform and display the pre-order traversal
-    cout << "Pre-order Traversal: ";
-    preOrder(root);
-    cout << endl;
+return 0;
 
-    // Perform and display the post-order traversal
-    cout << "Post-order Traversal: ";
-    postOrder(root);
-    cout << endl;
-
-    return 0; // Exit the program
 }
