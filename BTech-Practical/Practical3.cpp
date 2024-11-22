@@ -56,7 +56,7 @@ public:
     // Check element by element if they match
     bool palindrome = true;
     // cout<<count;
-    for (size_t i = 0; i < count; i++)
+    for (int i = 0; i < count; i++)
     {
         if (stack[i] != rev_array[i])
         {
@@ -82,7 +82,7 @@ int main()
     s1.push('h');
     s1.reverse();
     s1.ispalindrome();
-    
+
 
     // cout<<str;
     return 0;

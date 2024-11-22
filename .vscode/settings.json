@@ -9,6 +9,7 @@
         "queue": "cpp",
         "sstream": "cpp",
         "initializer_list": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "algorithm": "cpp"
     }
 }

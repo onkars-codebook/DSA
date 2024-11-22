@@ -1,85 +1,73 @@
-// This program that simply defines the Implementation of the Trees and their traversal as well  SO why to stop lets start .
-#include<iostream>
+#include <iostream>
+#include <stack>
+#include <cctype>
+
 using namespace std;
-class Node{
+
+class TreeNode {
 public:
-    int data;
-    Node* left;
-    Node* right;
-    Node(int val)             //Initiallizes the values  to the tree.
-    {
-        data = val;
-        left = nullptr;
-        right = nullptr;
-    }
- };
- Node* CreateTree()
- {
-    int data;
-    cout<<"Enter a data :(-1 indicates the null value )";
-    cin>>data;
-
-    if(data ==  -1)
-    {
-        return nullptr;
-    }
-
-    Node* root = new Node(data);
-    
-    cout <<"Enter the left child of "<<data<<":"<<endl;
-    root->left = CreateTree();
-
-    cout <<"Enter the right child of "<<data<<":"<<endl;
-    root->right = CreateTree();
-    
-    return root;
- }
-
- void inorder(Node* root)
- {
-    if(root == nullptr) 
-    return; 
-    inorder(root->left);
-    cout<<root->data;
-    inorder(root->right);
- }
+    char data;
+    TreeNode* left;
+    TreeNode* right;
  
- void preorder(Node* root)
- {
-    if(root == nullptr) return;
-    cout<<root->data;
-    preorder(root->left);
-    preorder(root->right);
- }
+    TreeNode(char val)  {
+      data = val;
+      left = nullptr;
+      right = nullptr;
+    }
+};
 
- void postorder(Node* root)
- {
-    if(root == nullptr) 
-    return;
-    postorder(root->left);
-    postorder(root->right);
-    cout<<root->data;
- }
+bool isOperator(char c) {
+    return (c == '+' || c == '-' || c == '*' || c == '/');
+}
 
+TreeNode* constructExpressionTree(const string prefixExpression) {
+    stack<TreeNode*> stk;
 
+    for (int i = prefixExpression.size() - 1; i >= 0; i--) {
+        char currentChar = prefixExpression[i];
 
+        if (isalnum(currentChar))    //if the scanned character is a character .
+        {
+            stk.push(new TreeNode(currentChar));
+        } 
+        else if (isOperator(currentChar)) //if the scanned character is a operator.
+        {
+            TreeNode* operand1 = stk.top();  //operand 1 will be this 
+            stk.pop();
 
-int main()
-{
-Node* root = nullptr;
-// create a root ;
-root = CreateTree();
+            TreeNode* operand2 = stk.top(); //and operand 2 will be this 
+            stk.pop();
 
-// preorder Traversal of the Tree
+            TreeNode* newNode = new TreeNode(currentChar);
+            newNode->left = operand1;
+            newNode->right = operand2;
 
-cout<<"Inorder Traversal :";
-inorder(root);
+            stk.push(newNode);
+        }
+    }
 
-cout<<"Preorder Traversal :";
-preorder(root);
+    return stk.top();
+}
 
-cout<<"postorder Traversal :";
-postorder(root);
+void inorderTraversal(TreeNode* root) {
+    if (root) {
+        inorderTraversal(root->left);
+        cout << root->data << " ";
+        inorderTraversal(root->right);
+    }
+}
 
-return 0;
+int main() {
+    string prefixExpression;
+    cout << "Enter the prefix expression: ";
+    cin >> prefixExpression;
+
+    TreeNode* root = constructExpressionTree(prefixExpression);
+
+    cout << "Inorder traversal: ";
+    inorderTraversal(root);
+    cout << endl;
+
+    return 0;
 }
