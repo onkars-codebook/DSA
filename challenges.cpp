@@ -4,42 +4,43 @@
 
 using namespace std;
 
-class TreeNode {
+class Node {
 public:
-    char data;
-    TreeNode* left;
-    TreeNode* right;
+    char data;    //data
+    Node* left;   //left pointer
+    Node* right; //right pointer 
  
-    TreeNode(char val)  {
-      data = val;
+    Node(char val)  {
+      data = val;  
       left = nullptr;
       right = nullptr;
     }
 };
 
-bool isOperator(char c) {
+bool isOperator(char c) {   //function to find out the operator.
     return (c == '+' || c == '-' || c == '*' || c == '/');
 }
 
-TreeNode* constructExpressionTree(const string prefixExpression) {
-    stack<TreeNode*> stk;
-
+Node* constructExpressionTree(const string prefixExpression) {
+    stack<Node*> stk;   //creating an stack.
+//    e.g : +*abc 
+// it will start from right to left so that we use the reverse for loop.
     for (int i = prefixExpression.size() - 1; i >= 0; i--) {
         char currentChar = prefixExpression[i];
-
+         
         if (isalnum(currentChar))    //if the scanned character is a character .
         {
-            stk.push(new TreeNode(currentChar));
+            stk.push(new Node(currentChar));
         } 
         else if (isOperator(currentChar)) //if the scanned character is a operator.
         {
-            TreeNode* operand1 = stk.top();  //operand 1 will be this 
+            Node* operand1 = stk.top();  //operand 1 will be this 
             stk.pop();
 
-            TreeNode* operand2 = stk.top(); //and operand 2 will be this 
+            Node* operand2 = stk.top(); //and operand 2 will be this 
             stk.pop();
 
-            TreeNode* newNode = new TreeNode(currentChar);
+            Node* newNode = new Node(currentChar);
             newNode->left = operand1;
             newNode->right = operand2;
 
@@ -50,7 +51,7 @@ TreeNode* constructExpressionTree(const string prefixExpression) {
     return stk.top();
 }
 
-void inorderTraversal(TreeNode* root) {
+void inorderTraversal(Node* root) {
     if (root) {
         inorderTraversal(root->left);
         cout << root->data << " ";
@@ -63,7 +64,7 @@ int main() {
     cout << "Enter the prefix expression: ";
     cin >> prefixExpression;
 
-    TreeNode* root = constructExpressionTree(prefixExpression);
+    Node* root = constructExpressionTree(prefixExpression);
 
     cout << "Inorder traversal: ";
     inorderTraversal(root);
