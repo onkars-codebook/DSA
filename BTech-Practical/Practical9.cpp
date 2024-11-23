@@ -23,11 +23,11 @@ bool isOperator(char c) {   //function to find out the operator.
 
 Node* constructExpressionTree(const string prefixExpression) {
     stack<Node*> stk;   //creating an stack.
-//    e.g : abc*+ 
-// just changed the loop.
-    for (int i = 0 ; i <= prefixExpression.size() - 1; i++) {
+//    e.g : +*abc 
+// it will start from right to left so that we use the reverse for loop.
+    for (int i = prefixExpression.size() - 1; i >= 0; i--) {
         char currentChar = prefixExpression[i];
-         
+
         if (isalnum(currentChar))    //if the scanned character is a character .
         {
             stk.push(new Node(currentChar));
@@ -61,7 +61,7 @@ void inorderTraversal(Node* root) {
 
 int main() {
     string prefixExpression;
-    cout << "Enter the Postfix expression: ";
+    cout << "Enter the prefix expression: ";
     cin >> prefixExpression;
 
     Node* root = constructExpressionTree(prefixExpression);
