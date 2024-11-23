@@ -46,7 +46,7 @@ void inorder(Node* root) {
 // Function to find the minimum marks (leftmost node)
 Node* findMin(Node* root) {
     Node* current = root;    //orignal root pointer should not be changed so that its assigned to the current ptr;
-    while (current && current->left != nullptr) {
+    while ( current->left != nullptr) {
         current = current->left;
     }
     return current;
@@ -55,7 +55,7 @@ Node* findMin(Node* root) {
 // Function to find the maximum marks (rightmost node)
 Node* findMax(Node* root) {
     Node* current = root;
-    while (current && current->right != nullptr) {
+    while (current->right != nullptr) {
         current = current->right;
     }
     return current;

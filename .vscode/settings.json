@@ -10,6 +10,9 @@
         "sstream": "cpp",
         "initializer_list": "cpp",
         "utility": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "*.tcc": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp"
     }
 }

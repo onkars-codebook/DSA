@@ -16,7 +16,7 @@ string decimalToBinary(int number) {
     // Divide the number by 2 and store remainders in the stack
     while (number > 0) {
         binaryStack.push(number % 2); // Push remainder onto the stack
-        number /= 2;                 // Update the number
+        number = number / 2;                 // Update the number
     }
 
     // Pop the stack to form the binary result
