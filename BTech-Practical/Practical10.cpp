@@ -29,7 +29,12 @@ int main()
            cin>>adj[i][j];
        }
    }
-   
+    // Suppose this is the input :    
+    // 0   2   0   6
+    // 2   0   3   8
+    // 0   3   0   0
+    // 6   8   0   0
+
    // printed adjacency matrix
    cout<<"entered Adjacency matrix"<<endl;
    for(int i=0;i<v;i++)
@@ -58,19 +63,23 @@ int main()
               adj[i][j]=999;
           }
        }
+    // 999  2   999  6
+    // 2    999 3    8
+    // 999  3   999  999
+    // 6    8   999  999
+
       
    }
    
    cout<<"enter starting vertx"<<endl;
    cin>>stv;
-   visited[stv]=1;
-   distance[stv]=0;
+   visited[stv]=1;       //let's visit the starting vertex firstly.
+   distance[stv]=0;      //Distance for starting vertex is '0'.
    for(int i=0;i<v;i++)
    {
-       distance[i]=adj[stv][i];
-       from[i]=stv;
+       distance[i]=adj[stv][i];       //distance from starting vertex 
+       from[i]=stv;                   //intially from 0
    }
-   
    
    cout<<"visited [ ";
    for(int i=0;i<v;i++)
@@ -79,6 +88,7 @@ int main()
    }
     cout<<" ]";
     cout<<endl;
+
      cout<<"distance [ ";
    for(int i=0;i<v;i++)
    {
@@ -86,6 +96,7 @@ int main()
    }
     cout<<" ]";
     cout<<endl;
+
     cout<<"from [ ";
    for(int i=0;i<v;i++)
    {
@@ -93,25 +104,34 @@ int main()
    }
     cout<<" ]";
     cout<<endl;
-    
-    int count=1;
+
+// ouput will be :
+//    visited  = [1, 0, 0, 0]       // Only starting vertex 0 is visited.
+//    distance = [999, 2, 999, 6]     // Distances from 0 to other vertices.
+//    from     = [0, 0, 0, 0]       // All edges start from vertex 0.
+
+  int count=1;
 
   while(count<v-1)
   {
   mindistance=999;
-      for(int i=0;i<v;i++)
+      for(int i=0;i<v;i++)    //Finding a Minimum distance to calculate for the next node(which should not visited).
          if(distance[i]<mindistance&&!visited[i]) {
          mindistance=distance[i];
-         nextnode=i;
+         nextnode=i;   
       }
-      visited[nextnode]=1;
-      for(int i=0;i<v;i++)
+      
+      visited[nextnode]=1;      //make that node to be visited 
+
+      for(int i=0;i<v;i++)       //next logic for all unvisited vertices.
          if(!visited[i])
       if(adj[nextnode][i]<distance[i]) {
          distance[i]=adj[nextnode][i];
          from[i]=nextnode;
       }
       count++;
+      
+    //   Prints all the data .
       cout<<"visited"<<" ";
       for(int i=0;i<v;i++)
       {
@@ -133,6 +153,9 @@ int main()
       cout<<"----------------------------------------------";
       cout<<endl;
    }
+
+
+//    Printing the path.
    cout<<"path to follow"<<endl;
     for(int i=0;i<v;i++)
     {
