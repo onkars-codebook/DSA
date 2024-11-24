@@ -84,9 +84,10 @@ public:
 int main()
 {
 Node* root = nullptr;
+
 // create a root ;
 root = CreateTree();
-
+displayLeafNodes(root);
 // preorder Traversal of the Tree
 
 cout<<"Inorder Traversal :";
