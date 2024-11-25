@@ -1,4 +1,4 @@
-// This program that simply defines the Implementation of the Trees and their traversal as well  SO why to stop lets start .
+// This program that simply defines the Implementation of the Trees and their traversal as well so why to stop lets start .
 #include<iostream>
 using namespace std;
 class Node{
@@ -13,6 +13,7 @@ public:
         right = nullptr;
     }
  };
+ 
  Node* CreateTree()
  {
     int data;
