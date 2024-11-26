@@ -1,8 +1,6 @@
 // Read the marks obtained by students of second year in an online examination of particular subject. Find out maximum and minimum marks obtained in that subject. Use heap data structure.
 #include <iostream>
 using namespace std;
-
-
 class HeapOperations {
 private:
     int* marks;
@@ -67,7 +65,7 @@ private:
         {
             cout<<"|  "<<arr[k]<<"  |";
         }
-        cout<<endl<<"affected element is "<<arr[largest]<<" apply recursive heapify onit"<<endl;
+        cout<<endl<<"affected element is"<<arr[largest]<<" apply recursive heapify onit"<<endl;
             // Recursively heapify the affected sub-tree
             maxHeapify(arr, n, largest);
          cout<<endl;

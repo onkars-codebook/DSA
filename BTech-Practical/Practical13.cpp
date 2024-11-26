@@ -15,6 +15,7 @@ int main()
         cout<<"enter probability of p["<<i<<"]"<<endl;
         cin>>p[i];
     }
+
     cout<<endl<<"-------------------------------------------"<<endl;
     cout<<endl<<"probability of successfull search"<<endl;
     cout<<endl<<"-------------------------------------------"<<endl;
@@ -61,8 +62,6 @@ int main()
                 w[i][i]=q[i]+p[i+1]+q[i+1];
                 c[i][i]=w[i][i];
                 r[i][i]=i;
-            
-            
         }
         
         m=m-1;

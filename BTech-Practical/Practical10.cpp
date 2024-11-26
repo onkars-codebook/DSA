@@ -11,7 +11,7 @@ int main()
 {
     int stv;
     int v;
-    cout<<"enter number of vertices in graph"<<endl;
+    cout<<"Enter number of vertices in graph"<<endl;
     cin>>v;
     int total_distance=0;
     int mindistance;
@@ -73,8 +73,8 @@ int main()
    
    cout<<"enter starting vertx"<<endl;
    cin>>stv;
-   visited[stv]=1;       //let's visit the starting vertex firstly.
-   distance[stv]=0;      //Distance for starting vertex is '0'.
+   visited[stv]=1;       // let's visit the starting vertex firstly.
+   distance[stv]=0;      // Distance for starting vertex is '0'.
    for(int i=0;i<v;i++)
    {
        distance[i]=adj[stv][i];       //distance from starting vertex 
@@ -106,9 +106,9 @@ int main()
     cout<<endl;
 
 // ouput will be :
-//    visited  = [1, 0, 0, 0]       // Only starting vertex 0 is visited.
+//    visited  = [1, 0, 0, 0]         // Only starting vertex 0 is visited.
 //    distance = [999, 2, 999, 6]     // Distances from 0 to other vertices.
-//    from     = [0, 0, 0, 0]       // All edges start from vertex 0.
+//    from     = [0, 0, 0, 0]         // All edges start from vertex 0.
 
   int count=1;
 
