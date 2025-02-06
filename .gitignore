@@ -1,0 +1,9 @@
+# Ignore all .class files
+*.class
+
+# Ignore all .cdcode files
+*.vscode
+
+# Ignore target and bin directories (commonly used for compiled files)
+/target/
+/bin/
