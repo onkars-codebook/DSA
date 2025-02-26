@@ -1,0 +1,33 @@
+Generally 2D Array have following memory allocation technique :
+    1. Row major
+    2. Column major
+
+following diagram  represent both :
+
+Row Major Order:
+-------------------
+| a11 | a12 | a13 |
+| a21 | a22 | a23 |
+| a31 | a32 | a33 |
+
+Memory Layout: a11, a12, a13, a21, a22, a23, a31, a32, a33
+
+Column Major Order:
+-------------------
+| a11 | a12 | a13 |
+| a21 | a22 | a23 |
+| a31 | a32 | a33 |
+
+Memory Layout: a11, a21, a31, a12, a22, a32, a13, a23, a33
+
+
+But in java 2D array have memory allocation like every row at 
+different location, where location of 1st row is not related to another one.
+
+suppose : 
+
+| 101 | 202 | 301 |  array stores the address of each row.
+
+| a11 | a12 | a13 |   <---101
+| a21 | a22 | a23 |   <---201
+| a31 | a32 | a33 |   <---301

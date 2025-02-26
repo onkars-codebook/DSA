@@ -1,29 +1,42 @@
-import java.util.Scanner;
-
-public class BubbleSorting {
-    public static void BubbleSort(int arr[]){
-        int temp;
-        for (int i = 0; i <= arr.length-2; i++) {
-            for (int j = 0; j < arr.length-2-i; j++) {
-                if(arr[j] > arr[j+1]){
-                    temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
+class selectionSort {
+    public static void SelectionSortFun(int arr[])
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            int min = i;
+            for(int j=i+1;j<arr.length;j++)
+            {
+                if(arr[j]<arr[min])
+                {
+                    min=j;
                 }
             }
-        }
-        System.out.println("After Bubble sort : ");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
+            if(min!=i)
+            {
+                int temp=arr[min];
+                arr[min]=arr[i];
+                arr[i]=temp;
+            }
         }
     }
+
+    public static void printArray(int arr[])
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
-         int[] arr = new int[5];
-         Scanner sc = new Scanner(System.in);
-         System.out.println("Enter an array elements  : ");
-         for (int i = 0; i < arr.length; i++) {
-            arr[i] = sc.nextInt();
-         }
-    BubbleSort(arr);
+        int arr[]={5,2,3,1,4};
+        SelectionSortFun(arr);
+        printArray(arr);
+    }
+
+    @Override
+    public String toString() {
+        return "selectionSort []";
     }
 }

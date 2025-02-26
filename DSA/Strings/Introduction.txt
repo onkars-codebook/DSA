@@ -1,0 +1,138 @@
+// Definition: A string in Java is a sequence of characters. 
+Strings are objects in Java, which means they have methods that can perform operations on them.
+
+// Syntax: 
+String str = "Hello, World!";
+
+// Example:
+public class Main {
+    public static void main(String[] args) {
+        // Creating a string
+        String greeting = "Hello, World!";
+        
+        // Printing the string
+        System.out.println(greeting);
+        
+        // String length
+        int length = greeting.length();
+        System.out.println("Length: " + length);
+        
+        // Concatenation
+        String name = "Alice";
+        String welcomeMessage = greeting + " " + name;
+        System.out.println(welcomeMessage);
+        
+        // Substring
+        String sub = greeting.substring(0, 5);
+        System.out.println("Substring: " + sub);
+        
+        // Replace
+        String replaced = greeting.replace("World", "Java");
+        System.out.println("Replaced: " + replaced);
+    }
+}
+//explain the next and next line method 
+// Methods of java strings: 
+
+public class StringMethods {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        
+        // length()
+        int length = str.length();
+        
+        // charAt()
+        char ch = str.charAt(0);
+        
+        // substring()
+        String substr = str.substring(0, 5);
+        
+        // contains()
+        boolean contains = str.contains("World");
+        
+        // equals()
+        boolean isEqual = str.equals("Hello, World!");
+        
+        // equalsIgnoreCase()
+        boolean isEqualIgnoreCase = str.equalsIgnoreCase("hello, world!");
+        
+        // compareTo()
+        int compareTo = str.compareTo("Hello, World!");
+        
+        // compareToIgnoreCase()
+        int compareToIgnoreCase = str.compareToIgnoreCase("hello, world!");
+        
+        // startsWith()
+        boolean startsWith = str.startsWith("Hello");
+        
+        // endsWith()
+        boolean endsWith = str.endsWith("World!");
+        
+        // indexOf()
+        int indexOf = str.indexOf('o');
+        
+        // lastIndexOf()
+        int lastIndexOf = str.lastIndexOf('o');
+        
+        // isEmpty()
+        boolean isEmpty = str.isEmpty();
+        
+        // trim()
+        String trimmed = str.trim();
+        
+        // replace()
+        String replaced = str.replace("World", "Java");
+        
+        // replaceAll()
+        String replacedAll = str.replaceAll("World", "Java");
+        
+        // replaceFirst()
+        String replacedFirst = str.replaceFirst("World", "Java");
+        
+        // split()
+        String[] split = str.split(", ");
+        
+        // toLowerCase()
+        String lowerCase = str.toLowerCase();
+        
+        // toUpperCase()
+        String upperCase = str.toUpperCase();
+        
+        // valueOf()
+        String valueOf = String.valueOf(123);
+        
+        // intern()
+        String interned = str.intern();
+        
+        // toCharArray()
+        char[] charArray = str.toCharArray();
+        
+        // format()
+        String formatted = String.format("Hello, %s!", "World");
+        
+        // join()
+        String joined = String.join(", ", "Hello", "World");
+        
+        // matches()
+        boolean matches = str.matches("Hello, World!");
+        
+        // getBytes()
+        byte[] bytes = str.getBytes();
+        
+        // getChars()
+        char[] chars = new char[5];
+        str.getChars(0, 5, chars, 0);
+    }
+}
+
+Concept Of 'Interning' 
+
+String str1 = "Onkar";  //Refers to same heap
+String str2 = "Onkar";  //Refers to same heap
+String str3 = new String(" Mayur");
+
+*Why to use StringBuffer over the String class
+ans - StringBuffer is preferred over String when frequent modifications are needed. 
+String is immutable, meaning each modification creates a new String object, leading to overhead. 
+StringBuffer, being mutable, allows modifications directly on the object, enhancing performance,
+especially in scenarios with repetitive changes like appending in loops.
