@@ -1,0 +1,4 @@
+In programming, a destructor is a method called when an object isdestroyed, typically to release
+resources like memory, file handles,or network connections. In languages like C++, destructors are
+explicitly used to manage resource cleanup.However, Java takes a different approach due to its 
+automatic memory management system powered by garbage collection.

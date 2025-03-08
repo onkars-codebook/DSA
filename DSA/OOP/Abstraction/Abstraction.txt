@@ -1,0 +1,13 @@
+Hiding the unneccessry data and showing only the essential details is known as a Abstraction.
+- Abstraction can be implemented by :
+    1) Abstract Keyword.
+    2) Using the Interface 
+
+Some rules to define the Abstrat class
+
+I -  We can't create the object of abstract class
+II - Abstract class can be include abstract as well as non abstract methods.
+III - Can have the Constructors
+IV - *Class that implement the abstract class must implement all the abstract methods of the abstract 
+      method of the abstract Class
+

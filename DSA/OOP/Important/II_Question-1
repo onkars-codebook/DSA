@@ -1,0 +1,36 @@
+Which of the following is a correct statement? (both classes in the same package)
+
+java
+
+class Vehicle { }
+class Car extends Vehicle { }
+
+a. Car c = new Car();  - right 
+
+b. Vehicle v = new Vehicle();  - right
+
+c. Vehicle v = new Car(); - right
+
+d. Car c = new Vehicle()
+
+Rule :
+
+Parent refrence = child Object;
+so option c is correct.
+ 
+
+what is refrence - that stores the address of the object.
+what  is object -  that actually stores.
+
+class Vehicle {
+    int a;
+}
+class Car extends Vehicle {
+    int b;
+}
+
+Car c = new Vehicle();   // Here Car c is the refrence and the new Vechile forms an object, and allocating the 
+// memory, so car class has property b, so c object can be able to access the all the properties in Vichle 
+// but not in the Car.
+Vehicle v = new Car(); // This will give the Runtime error, because vichle refrence will unable to assign 
+//the Car.

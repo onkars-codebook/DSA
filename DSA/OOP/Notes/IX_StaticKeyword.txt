@@ -1,0 +1,12 @@
+In Java, the super keyword is used to refer to the parent class (superclass). 
+
+It has three main uses:
+
+- Access Parent Class Methods – Calls an overridden method from the parent class using super.methodName().
+- Access Parent Class Variables – Refers to a parent class field if a subclass has the same field name (super.variableName).
+- Call Parent Class Constructor – Calls the parent class constructor using super() (must be the 
+  first statement in a constructor).
+
+
+
+Constructor chaining 

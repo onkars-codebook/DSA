@@ -1,0 +1,14 @@
+Static keyword in the Java is used to share the same variable or method of a given class.
+We can staic the :
+
+    1. Properties
+    2. Functions
+    3. Blocks
+    4. Nested Classes
+
+ Characteristics of static keyword:
+ 1. Characteristics of static keyword:
+ 2. Accessible without object instantiation
+ 3. Associated with class, not objects
+ 4. Cannot access non-static members
+ 5. Can be overloaded, but not overridden

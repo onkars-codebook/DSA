@@ -1,0 +1,19 @@
+The word polymorphism means having many forms. In simple words, we can define polymorphism as the 
+ability of a message to be displayed in more than one form. Real life example of polymorphism, 
+a person at the same time can have different characteristic. Like a man at the same time is a father,
+a husband, an employee.
+
+polymorphism have follwing types :
+    1) Run time polymorphism :
+    - Method overriding 
+    - When a method is called on a parent class reference holding a child class object,
+      The method of the child class is executed, not the parent class method.
+      This decision happens at runtime, based on the actual object.
+
+    2) Compile Time polymorphism
+    - method overloading 
+    - The compiler determines which method to invoke by checking the method signature (method name, 
+      number of parameters, type of parameters).
+    - At compile time, the compiler decides which method() method to call.
+
+    
